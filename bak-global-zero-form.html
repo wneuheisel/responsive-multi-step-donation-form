@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7"  lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7"  lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8"  lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9"  lang="en" dir="ltr"><![endif]-->
+<!--[if IE 9]><html class="ie9"  lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html  lang="en" dir="ltr"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta charset="utf-8" />
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width,initial-scale = 1.0">
+  <meta http-equiv="cleartype" content="on">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&subset=latin,cyrillic-ext,vietnamese,latin-ext,greek,greek-ext,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='stylesheets/screen.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript">
+// Allow the production and development servers to add scripts and styles to
+// this page.
+var GlobalZero = GlobalZero || {};
+
+GlobalZero.listener = function(event) {
+  if (event.origin !=="https://www.globalzero.org" &&
+      event.origin !== "https://gz-d7.dev.advomatic.com" &&
+      event.origin !== "http://gz-d7.local" &&
+      event.origin !== "http://globalzero.local" &&
+      event.origin !== "http://localhost" &&
+      event.origin !== "http://globalzero.getcadre.com" &&
+      event.origin !== "https://globalzero.getcadre.com"
+  ) {
+    console.log(event.origin + ' not in GlobalZero.listener whitelist');
+    return;
+  }
+  console.log('appending ' + event.data);
+  $('head').append(event.data);
+};
+
+console.log('setting up');
+if (window.addEventListener) {
+  addEventListener("message", GlobalZero.listener, false);
+}
+else {
+  attachEvent("onmessage", GlobalZero.listener);
+}
+
+  </script>
+  <style type="text/css">
+    /* Hide the donation form upon page load, until it gets styled via the externally-hosted custom.css. */
+    /*.salsa {
+      display: none;
+    } */
+  </style>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6552450-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script></head>
+<body>
+
+
+
+
+<script type="text/javascript"><!-- //
+	// if user enters text in the Other text field, uncheck the fixed contribution radio buttons
+	function checkOther(form_in) {
+		var radioGrp = form_in.amount;
+		for (i = 0; i < radioGrp.length; i++) {
+			if (i != radioGrp.length - 1) { //the Other radio button must be the last one in the array
+				radioGrp[i].checked = false;
+			} else {
+				radioGrp[i].checked = true;
+			}
+		}
+	}
+
+	function trimOther(form_in) {
+		form_in.amountOther.value = form_in.amountOther.value.replace(/[^0-9.]/g,"");
+	}
+
+	// if user clicks a fixed contribution amount, clear the Other text field
+	function clearOther(form_in) {
+		form_in.amountOther.value = '';
+	}
+	function checkRecurringOpts(){
+		if ($("#recurring").attr("checked")){
+			$('#recurring_options').show(200)
+		}else{
+			$('#recurring_options').hide(200)
+		}
+	}
+	$(checkRecurringOpts);
+
+    
+// --></script>
+
+
+
+
+
+<div class="salsa donation" id="salsa" role="tabpanel">
+	
+		<div id="salsaDonationHeader"><p>&#160;</p></div>
+		
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist" id="myTab">
+    <li role="presentation" class="active"><a href="#pane1" id="nav-amount" aria-controls="pane1" role="tab" data-toggle="tab"><span>1.</span> &nbsp;Amount</a></li>
+    <li role="presentation"><a href="#pane2" id="nav-name" aria-controls="pane2" role="tab" data-toggle="tab"><span>2.</span> &nbsp;Name</a></li>
+    <li role="presentation"><a href="#pane3" id="nav-payment" aria-controls="pane3" role="tab" data-toggle="tab"><span>3.</span> &nbsp;Payment</a></li>
+  </ul>
+
+
+    <!-- Tab panes -->
+  <div class="tab-content">
+    <section role="tabpanel" class="tab-pane fade in active" id="pane1">
+
+<form action="https://org2.salsalabs.com/salsa/shop/processDonate.jsp" method="post" name="subform" id="subform" class="orderform" >
+
+       <style>.memberSignup{display:none;}</style>
+         <div class="memberSignup">
+           <input name="first_name_5542" value="" />
+        </div>
+		<input class="field" type="hidden" name="table" value="supporter" />
+		<input type="hidden" name="redirect" value="http://www.globalzero.org/tell-a-friend" />
+		<input type="hidden" name="email_trigger_KEYS" value="5799,29149" />
+		<input type="hidden" name="merchant_account_KEY" value="114" id="merchant_account_KEY" />
+		<input type="hidden" name="donate_page_KEY" value="9891" />
+		
+		<input type="hidden" name="Tax_Status" value="C3" />
+		<input type="hidden" name="Transaction_Type" value="Donation" />
+		<input type="hidden" name="Tracking_Code" value="template_donate" />
+		<input type="hidden" name="amountLimit" value="1000000.00" />
+		<input type="hidden" name="amountMinimum" value="2.00" />
+
+		
+
+		
+
+
+		
+			<input type="hidden" name="feed_archetype" value="31308" />
+		
+
+		
+		
+
+		
+		<div id="right_container">
+
+			
+				<fieldset id="donation_amount">
+				
+
+					
+						<div id="pre_donation_text">
+							<p>&#160;</p>
+						</div><!-- pre_donation_text -->
+					
+
+					
+
+						<div id="recurrence">
+							
+							<div class="formRow">
+								<input checked="checked" value="0" name="recurring" onclick="checkRecurringOpts()" type="radio" id="one_time" />
+								<label for="one_time">
+									One-time contribution
+								</label>
+							</div>
+							
+							<div class="formRow">
+								<input value="1" name="recurring" onclick="checkRecurringOpts()" type="radio" id="recurring" />
+								<label for="recurring">
+									Recurring contribution
+									<a href="#" class="link-help" onclick="window.open('help-recurring.html', 'pop1', 'toolbar=no,menubar=no,scrollbars=no,,width=500,height=200')">
+										(what's this?)
+									</a>
+								</label>
+							</div>
+
+
+							<span id="recurring_options">
+							<span id='salsaform_1'><div class='formRow'><select name="PAYPERIOD" id="donation_pay_periods" class="salsainput salsaselect" title=""  >
+<option value="MONT"  selected="selected">Every Month</option>
+<option value="WEEK"  >Every Week</option>
+<option value="QTER"  >Every 3 Months</option>
+<option value="SMYR"  >Every 6 Months</option>
+<option value="YEAR"  >Every Year</option>
+</select>
+</div><div class='formRow'><label class="selectLabel" for="donation_term" title="">for</label>
+<select name="TERM" id="donation_term" class="salsainput salsaselect" title=""  >
+<option value="9999"  selected="selected">Unlimited</option>
+<option value="2"  >2</option>
+<option value="3"  >3</option>
+<option value="4"  >4</option>
+<option value="5"  >5</option>
+<option value="6"  >6</option>
+<option value="7"  >7</option>
+<option value="8"  >8</option>
+<option value="9"  >9</option>
+<option value="10"  >10</option>
+<option value="11"  >11</option>
+<option value="12"  >12</option>
+<option value="13"  >13</option>
+<option value="14"  >14</option>
+<option value="15"  >15</option>
+<option value="16"  >16</option>
+<option value="17"  >17</option>
+<option value="18"  >18</option>
+<option value="19"  >19</option>
+<option value="20"  >20</option>
+<option value="21"  >21</option>
+<option value="22"  >22</option>
+<option value="23"  >23</option>
+<option value="24"  >24</option>
+<option value="25"  >25</option>
+<option value="26"  >26</option>
+<option value="27"  >27</option>
+<option value="28"  >28</option>
+<option value="29"  >29</option>
+<option value="30"  >30</option>
+<option value="31"  >31</option>
+<option value="32"  >32</option>
+<option value="33"  >33</option>
+<option value="34"  >34</option>
+<option value="35"  >35</option>
+<option value="36"  >36</option>
+</select>
+</div></span>
+							times
+							</span>
+							</div><!-- recurrence -->
+
+					    
+
+							<div class="amount-select" data-toggle="buttons">
+									
+									<label for="amt 10" data-target="#pane2" data-toggle="tab" class="btn btn-primary amount-button">
+										<input id="amt10" value="10" name="amount" type="radio" onfocus="clearOther(this.form);"  />$ 10
+									</label>
+					
+									<label for="amt 25" class="btn btn-primary amount-button">
+										<input id="amt 25" value="25" name="amount" type="radio" onfocus="clearOther(this.form);"  />$ 25
+									</label>
+						
+									<label for="amt 50" class="btn btn-primary amount-button">
+										<input id="amt 50" value="50" name="amount" type="radio" onfocus="clearOther(this.form);"  />$ 50
+									</label>
+
+									<label for="amt 100" class="btn btn-primary amount-button">
+										<input id="amt 100" value="100" name="amount" type="radio" onfocus="clearOther(this.form);"  />$ 100
+									</label>
+
+									<label for="amt 250" class="btn btn-primary amount-button">
+										<input id="amt 250" value="250" name="amount" type="radio" onfocus="clearOther(this.form);"  />$ 250
+									</label>
+								
+									<label for="amt 500" class="btn btn-primary amount-button">
+										<input id="amt 500" value="500" name="amount" type="radio" onfocus="clearOther(this.form);"  />$ 500
+									</label>
+									
+									<label for="amt 1000" class="btn btn-primary amount-button">
+										<input id="amt 1000" value="1000" name="amount" type="radio" onfocus="clearOther(this.form);"  />$ 1000
+									</label>
+									
+									<label for="amt 5000" class="btn btn-primary amount-button">
+										<input id="amt 5000" value="5000" name="amount" type="radio" onfocus="clearOther(this.form);"  />$ 5000
+									</label>
+
+									<label for="other" class="other">Other
+										<input id="other" value="other" name="amount" type="radio" />
+										<input id="otheramt" name="amountOther" type="text" onfocus="checkOther(this.form);" onblur="trimOther(this.form);" value="" placeholder="$"/>
+									</label>
+						
+						</div>
+				</fieldset><!-- donation_amount -->
+				<p><a id="next1" href="#pane2" data-toggle="tab" class="btn btn-info outside-link">Next ></a></p>
+
+		</section>
+
+	<section role="tabpanel" class="tab-pane fade" id="pane2">
+		<div id="left_container">
+			<input type="hidden" name="key" value="0" />
+		
+			<fieldset id="personal_information">
+				
+
+
+<script src="https://my.oneid.com/api/js/includeexternal.js"></script>
+<script src="https://my.oneid.com/api/form/form.js"></script>
+<script src="https://my.oneid.com/api/salsa/formtemplate.js"></script>
+<div id="oneIdDiv"></div>
+
+					
+
+
+
+<script language="JavaScript" src="/salsa/include/loadjquery.js"></script>
+<script language="JavaScript" src="/dia/include/datetime/jquery.date_input.js"></script>
+<script language="JavaScript" src="/dia/include/datetime/init_date_input.js"></script>
+<link href="/dia/include/datetime/date_input.css" rel="stylesheet" type="text/css" />
+
+<div class="supporterInfo">
+	<input type="hidden" name="table" value="supporter"/>
+<br/>
+
+                
+
+
+
+
+
+
+
+<div class="diaFields">
+<input type="hidden" name="key" value="0" />
+		<div class="clear"></div>
+		<div class="formRow">
+		
+<label for="f1">First Name<span class='required'>*</span></label>
+
+<input title="First Name" type="text" id="f1" name="First_Name" class="blockInput salsa_first_name form-control" value="" size="25" /></div>
+
+		<div class="clear"></div>
+		<div class="formRow">
+		
+<label for="f2">Last Name<span class='required'>*</span></label>
+<input title="Last Name" type="text" id="f2" name="Last_Name" class="blockInput salsa_last_name form-control" value="" size="25" /></div>
+
+		<div class="clear"></div>
+		<div class="formRow">
+		
+<label for="f3">Email<span class='required'>*</span></label>
+
+<script type="text/javascript">
+            function validateEmail(email) 
+            {
+                if (email=="") return;
+               	var re =/^[_a-zA-Z0-9!#$%&'*+/=?^`{|}~-]+(\.[_a-zA-Z0-9&'!#$%&'*+/=?^`{|}~-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]{1,})*\.([a-zA-Z]{2,}){1}$/;
+                
+                if (! re.test(email) ){
+            		$("div[id='emailValidationErrorId']").html("<span class='required'>Please enter a valid email address.</span>");
+                }else{
+                	$("div[id='emailValidationErrorId']").html("");
+                };
+            }
+</script>
+
+<input title="Email" type="text" id="f3" name="Email" class="blockInput salsa_email form-control" value="" onblur="validateEmail(this.value)" size="25" /></div>
+<div id="emailValidationErrorId"></div>
+
+		<div class="formRow">
+		
+<label id="label.Street" for="f4">Address<span class='required'>*</span></label>
+<input title="Street 1" type="text" id="f4" name="Street" class="blockInput salsa_street form-control" value="" size="25" /></div>
+
+		<div class="clear"></div>
+		<div class="formRow">
+		
+
+		<div class="clear"></div>
+		<div class="formRow">
+		
+<label for="f6">City<span class='required'>*</span></label>
+<input title="City" type="text" id="f6" name="City" class="blockInput salsa_city form-control" value="" size="25" /></div>
+
+		<div class="clear"></div>
+		<div class="formRow">
+		
+
+<label for="f7">State/Province<span class='required'>*</span></label>
+<span class="stateSelect">
+  <select id="f7" name='State' class="state_dropdown blockInput salsa_state form-control" >
+
+
+
+  <option value="">Select a state</option>
+  <option value="AL" >Alabama</option>
+  <option value="AK" >Alaska</option>
+	<option value="AS" >American Samoa</option>
+	<option value="AZ" >Arizona</option>
+	<option value="AR" >Arkansas</option>
+	<option value="CA" >California</option>
+	<option value="CO" >Colorado</option>
+	<option value="CT" >Connecticut</option>
+	<option value="DE" >Delaware</option>
+	<option value="DC" >D.C.</option>
+	<option value="FL" >Florida</option>
+	<option value="GA" >Georgia</option>
+	<option value="GU" >Guam</option>
+	<option value="HI" >Hawaii</option>
+	<option value="ID" >Idaho</option>
+	<option value="IL" >Illinois</option>
+	<option value="IN" >Indiana</option>
+	<option value="IA" >Iowa</option>
+	<option value="KS" >Kansas</option>
+	<option value="KY" >Kentucky</option>
+	<option value="LA" >Louisiana</option>
+	<option value="ME" >Maine</option>
+	<option value="MD" >Maryland</option>
+	<option value="MA" >Massachusetts</option>
+	<option value="MI" >Michigan</option>
+	<option value="MN" >Minnesota</option>
+	<option value="MS" >Mississippi</option>
+	<option value="MO" >Missouri</option>
+	<option value="MT" >Montana</option>
+	<option value="NE" >Nebraska</option>
+	<option value="NV" >Nevada</option>
+	<option value="NH" >New Hampshire</option>
+	<option value="NJ" >New Jersey</option>
+	<option value="NM" >New Mexico</option>
+	<option value="NY" >New York</option>
+	<option value="NC" >North Carolina</option>
+	<option value="ND" >North Dakota</option>
+	<option value="MP" >Northern Mariana Islands</option>
+	<option value="OH" >Ohio</option>
+	<option value="OK" >Oklahoma</option>
+	<option value="OR" >Oregon</option>
+	<option value="PA" >Pennsylvania</option>
+	<option value="PR" >Puerto Rico</option>
+	<option value="RI" >Rhode Island</option>
+	<option value="SC" >South Carolina</option>
+	<option value="SD" >South Dakota</option>
+	<option value="TN" >Tennessee</option>
+	<option value="TX" >Texas</option>
+	<option value="UT" >Utah</option>
+	<option value="VT" >Vermont</option>
+	<option value="VI" >Virgin Islands</option>
+	<option value="VA" >Virginia</option>
+	<option value="WA" >Washington</option>
+	<option value="WV" >West Virginia</option>
+	<option value="WI" >Wisconsin</option>
+	<option value="WY" >Wyoming</option>
+        <option value="AA" >Armed Forces (the) Americas</option>
+        <option value="AE" >Armed Forces Europe</option>
+        <option value="AP" >Armed Forces Pacific</option>
+	<option value="AB" >Alberta</option>
+	<option value="BC" >British Columbia</option>
+	<option value="MB" >Manitoba</option>
+	<option value="NF" >Newfoundland</option>
+	<option value="NB" >New Brunswick</option>
+	<option value="NS" >Nova Scotia</option>
+	<option value="NT" >Northwest Territories</option>
+	<option value="NU" >Nunavut</option>
+	<option value="ON" >Ontario</option>
+	<option value="PE" >Prince Edward Island</option>
+	<option value="QC" >Quebec</option>
+	<option value="SK" >Saskatchewan</option>
+	<option value="YT" >Yukon Territory</option>
+	<option value="ot" >Other</option>
+</select>
+
+
+</span>
+</div>
+
+		<div class="clear"></div>
+		<div class="formRow">
+		
+<label for="f8">Zip/Postal Code<span class='required'>*</span></label>
+<input title="Zip Code" type="text" id="f8" name="Zip" class="blockInput salsa_zip form-control" value="" maxlength="10" /></div>
+
+		<div class="clear"></div>
+		<div class="formRow">
+		
+
+
+
+
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var selectId = 'f9'.replace(".","\\.");
+			// Remove required field - 'State', if 'State' is empty
+			var isStateRequired = false;
+			var requestFields = $("form").find("input[name='required']").val(); 
+			if(requestFields !== undefined && requestFields.indexOf("State") > 0){
+				isStateRequired = true;
+			}
+
+			//alert(selectId);
+			$("#"+selectId).change(function() {
+				var country_name = $("#"+selectId+" option:selected").attr("value");
+				$(".state_dropdown").empty();
+				
+				$.getJSON("/o/5542/p/salsa/common/international/public/country/eng/countryData.sjs?country=" + country_name + "&jsoncallback=?", function(data) {
+					$(".state_dropdown").append("<option value>Select a state<\/option>");
+					for (key in data.states) {
+						var state = data.states[key];
+						//regex for if a state code contains a number, then we are using old state code info with country+state, otherwise we are using correct state abbreviations
+						//is adaptable as we add new state info for countries. The issue is that we will have to write sql scripts to clean the DB info
+						if(!(/\d+/.test(state.code))){
+							$(".state_dropdown").append("<option value=" + state.code + ">" + state.name + "<\/option>");
+						}
+						else{
+							$(".state_dropdown").append("<option value=" + country_name + "+" + state.code + ">" + state.name + "<\/option>");
+						}
+					}
+					
+					// Remove required field - State, if State is empty
+					if(data.states.length == 0){
+						var $req = $("form").find("input[name='required']");
+						var req = $req.val();
+						if(req != undefined){
+							var newReqArray = req.replace(",State","");
+							$req.val(newReqArray);
+						}
+					} else if($('.stateSelect').length > 0){
+						var $req = $("form").find("input[name='required']");
+						var req = $req.val();
+						if(req != undefined){
+							if(req.indexOf("State") <= 0 && isStateRequired){
+								$req.val(req+",State");
+							}
+						}
+					}
+					
+				});
+				});
+		});
+	</script>
+
+	
+	
+		<label for="f9">Country</label>
+	
+	<div class="countrySelect_f9">
+		
+		<select id="f9" name="Country" class="blockInput salsa_country form-control">
+			<option value="">Select Country</option>
+
+			<noTemplate/>
+
+
+
+
+
+<option value="US">United States<option value="AF">Afghanistan<option value="AL">Albania<option value="DZ">Algeria<option value="AS">American Samoa<option value="AD">Andorra<option value="AO">Angola<option value="AI">Anguilla<option value="AQ">Antarctica<option value="AG">Antigua and Barbuda<option value="AR">Argentina<option value="AM">Armenia<option value="AW">Aruba<option value="AU">Australia<option value="AT">Austria<option value="AZ">Azerbaijan<option value="BS">Bahamas<option value="BH">Bahrain<option value="BD">Bangladesh<option value="BB">Barbados<option value="BY">Belarus<option value="BE">Belgium<option value="BZ">Belize<option value="BJ">Benin<option value="BM">Bermuda<option value="BT">Bhutan<option value="BO">Bolivia<option value="BA">Bosnia and Herzegovina<option value="BW">Botswana<option value="BV">Bouvet Island<option value="BR">Brazil<option value="IO">British Indian Ocean Territory<option value="BN">Brunei Darussalam<option value="BG">Bulgaria<option value="BF">Burkina Faso<option value="BI">Burundi<option value="KH">Cambodia<option value="CM">Cameroon<option value="CA">Canada<option value="CV">Cape Verde<option value="KY">Cayman Islands<option value="CF">Central African Republic<option value="TD">Chad<option value="CL">Chile<option value="CN">China<option value="CX">Christmas Island<option value="CC">Cocos (Keeling) Islands<option value="CO">Colombia<option value="KM">Comoros<option value="CG">Congo<option value="CK">Cook Islands<option value="CR">Costa Rica<option value="CI">Cote D'Ivoire<option value="HR">Croatia<option value="CU">Cuba<option value="CW">Curacao<option value="CY">Cyprus<option value="CZ">Czech Republic<option value="DK">Denmark<option value="DJ">Djibouti<option value="DM">Dominica<option value="DO">Dominican Republic<option value="TL">East Timor<option value="EC">Ecuador<option value="EG">Egypt<option value="SV">El Salvador<option value="GQ">Equatorial Guinea<option value="ER">Eritrea<option value="EE">Estonia<option value="ET">Ethiopia<option value="FK">Falkland Islands (Malvinas)<option value="FO">Faroe Islands<option value="FJ">Fiji<option value="FI">Finland<option value="FR">France<option value="FX">France, Metropolitan<option value="GF">French Guiana<option value="PF">French Polynesia<option value="TF">French Southern Territories<option value="GA">Gabon<option value="GM">Gambia<option value="GE">Georgia<option value="DE">Germany<option value="GH">Ghana<option value="GI">Gibraltar<option value="GR">Greece<option value="GL">Greenland<option value="GD">Grenada<option value="GP">Guadeloupe<option value="GU">Guam<option value="GT">Guatemala<option value="GN">Guinea<option value="GW">Guinea-Bissau<option value="GY">Guyana<option value="HT">Haiti<option value="HM">Heard and McDonald Islands<option value="VA">Holy See (Vatican City State)<option value="HN">Honduras<option value="HK">Hong Kong<option value="HU">Hungary<option value="IS">Iceland<option value="IN">India<option value="ID">Indonesia<option value="IR">Iran, Islamic Republic of<option value="IQ">Iraq<option value="IE">Ireland<option value="IL">Israel<option value="IT">Italy<option value="JM">Jamaica<option value="JP">Japan<option value="JO">Jordan<option value="KZ">Kazakhstan<option value="KE">Kenya<option value="KI">Kiribati<option value="KP">Korea, Dem. People's Republic of<option value="KR">Korea, Republic of<option value="KW">Kuwait<option value="KG">Kyrgyzstan<option value="LA">Lao People's Democratic Republic<option value="LV">Latvia<option value="LB">Lebanon<option value="LS">Lesotho<option value="LR">Liberia<option value="LY">Libyan Arab Jamahiriya<option value="LI">Liechtenstein<option value="LT">Lithuania<option value="LU">Luxembourg<option value="MO">Macao<option value="MK">Macedonia, Former Yugoslav Republic<option value="MG">Madagascar<option value="MW">Malawi<option value="MY">Malaysia<option value="MV">Maldives<option value="ML">Mali<option value="MT">Malta<option value="MH">Marshall Islands<option value="MQ">Martinique<option value="MR">Mauritania<option value="MU">Mauritius<option value="YT">Mayotte<option value="MX">Mexico<option value="FM">Micronesia, Federated States of<option value="MD">Moldova, Republic of<option value="MC">Monaco<option value="MN">Mongolia<option value="MS">Montserrat<option value="MA">Morocco<option value="MZ">Mozambique<option value="MM">Myanmar<option value="NA">Namibia<option value="NR">Nauru<option value="NP">Nepal<option value="NL">Netherlands<option value="NC">New Caledonia<option value="NZ">New Zealand<option value="NI">Nicaragua<option value="NE">Niger<option value="NG">Nigeria<option value="NU">Niue<option value="NF">Norfolk Island<option value="MP">Northern Mariana Islands<option value="NO">Norway<option value="OM">Oman<option value="PK">Pakistan<option value="PW">Palau<option value="PS">Palestinian Territory, Occupied<option value="PA">Panama<option value="PG">Papua New Guinea<option value="PY">Paraguay<option value="PE">Peru<option value="PH">Philippines<option value="PN">Pitcairn<option value="PL">Poland<option value="PT">Portugal<option value="PR">Puerto Rico<option value="QA">Qatar<option value="RE">Reunion<option value="RO">Romania<option value="RU">Russian Federation<option value="RW">Rwanda<option value="SH">Saint Helena<option value="KN">Saint Kitts and Nevis<option value="LC">Saint Lucia<option value="PM">Saint Pierre and Miquelon<option value="VC">Saint Vincent and the Grenadines<option value="WS">Samoa<option value="SM">San Marino<option value="ST">Sao Tome and Principe<option value="SA">Saudi Arabia<option value="SN">Senegal<option value="SP">Serbia<option value="SC">Seychelles<option value="SL">Sierra Leone<option value="SG">Singapore<option value="SX">Sint Maarten<option value="SK">Slovakia<option value="SI">Slovenia<option value="SB">Solomon Islands<option value="SO">Somalia<option value="ZA">South Africa<option value="SS">South Sudan<option value="GS">S. Georgia and S. Sandwich Islands<option value="ES">Spain<option value="LK">Sri Lanka<option value="SD">Sudan<option value="SR">Suriname<option value="SJ">Svalbard and Jan Mayen<option value="SZ">Swaziland<option value="SE">Sweden<option value="CH">Switzerland<option value="SY">Syrian Arab Republic<option value="TW">Taiwan<option value="TJ">Tajikistan<option value="TZ">Tanzania, United Republic of<option value="TH">Thailand<option value="TG">Togo<option value="TK">Tokelau<option value="TO">Tonga<option value="TT">Trinidad and Tobago<option value="TN">Tunisia<option value="TR">Turkey<option value="TM">Turkmenistan<option value="TC">Turks and Caicos Islands<option value="TV">Tuvalu<option value="UG">Uganda<option value="UA">Ukraine<option value="AE">United Arab Emirates<option value="GB">United Kingdom<option value="UM">United States Outlying Islands<option value="UY">Uruguay<option value="UZ">Uzbekistan<option value="VU">Vanuatu<option value="VE">Venezuela<option value="VN">Vietnam<option value="VG">Virgin Islands, British<option value="VI">Virgin Islands, U.S.<option value="WF">Wallis and Futuna<option value="EH">Western Sahara<option value="YE">Yemen<option value="YU">Yugoslavia<option value="ZR">Zaire<option value="ZM">Zambia<option value="ZW">Zimbabwe
+		</select>
+	</div>
+
+
+
+
+
+</div>
+
+</div>
+<input type="hidden" name="required" value="Email,First_Name,Last_Name,Street,City,State,Zip," />
+
+
+
+	<div id="preCustomText"><p>&#160;</p></div>
+
+	
+	<div class="customFields" id="customFields">
+	 <!-- START CUSTOM -->
+	 
+
+
+
+
+
+
+
+<div class="diaFields">
+<input type="hidden" name="key" value="0" />
+</div>
+<input type="hidden" name="required" value="Email,First_Name,Last_Name,Street,City,State,Zip," />
+
+
+	 <!-- END CUSTOM-->
+	</div>
+	
+ 
+</div>
+
+
+
+				
+
+		
+                        <input type="hidden" name="customfields" value="donation"/>
+			<input type="hidden" name="linkRequired" value=""/>
+			<input type="hidden" name="linkRequest" value=""/>
+                        <span id='salsaform_0'></span>
+				
+			</fieldset><!-- personal_information -->
+
+
+
+			
+<p><a id="next2" href="#pane3" data-toggle="tab" class="btn btn-info outside-link">Next ></a></p>
+	        
+
+			
+
+
+			
+		</div><!-- left_container -->
+
+	</section>
+
+
+	<section role="tabpanel" class="tab-pane fade" id="pane3">	
+	        
+	        <div id="useCC">
+			
+			<style>
+	.error {
+		padding: 5px;
+		text-align: center;
+		background: #FFDDDD;
+		color: #C00;
+		border: solid #e8a6a6;
+		border-width: 1px 0px 1px 0px;
+		font-size: 1.1em;
+		font-weight: bold;
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	a {
+    cursor:pointer;
+}
+</style>
+
+
+
+
+<fieldset id="credit_card_information">
+	
+
+	<div class="formRow">
+		<label for="cc_type">Card Type</label>
+		<select name="cc_type" class="field blockInput" id="cc_type">
+			<option value=""></option>
+			<option value="visa" >Visa</option>
+			<option value="mc" >MasterCard</option>
+
+			
+			<option value="amex" >American Express</option>
+			
+
+			
+			<option value="disc" >Discover</option>
+			
+
+			
+		</select>
+	</div>
+
+
+	<div class="formRow">
+		<div class="helpText">Please enter your card number with no spaces or dashes.</div>
+		
+		<label for="cc_number">
+			Card Number
+		</label>
+
+		<input id="cc_number" name="cc" class="field blockInput" type="text" maxlength="16" value="" type="text" autocomplete="off"/>
+	</div>
+
+
+
+	<div class="formRow">
+		
+
+		<label for="ccExpMonth">Expires</label>
+		<div class="blockInput">
+			<select name="ccExpMonth" class="field" id="ccExpMonth" autocomplete="off">
+				<option value=""></option>
+				
+							<option value="01">01</option>
+						
+							<option value="02">02</option>
+						
+							<option value="03">03</option>
+						
+							<option value="04">04</option>
+						
+							<option value="05">05</option>
+						
+							<option value="06">06</option>
+						
+							<option value="07">07</option>
+						
+							<option value="08">08</option>
+						
+							<option value="09">09</option>
+						
+							<option value="10">10</option>
+						
+							<option value="11">11</option>
+						
+							<option value="12">12</option>
+						
+			</select>
+
+			<label style="display: none;" for="ccExpYear">Expiration Month</label>
+
+			<select name="ccExpYear" class="field" id="ccExpYear" autocomplete="off">
+				<option value=""></option>
+				
+							<option value="15">2015</option>
+						
+							<option value="16">2016</option>
+						
+							<option value="17">2017</option>
+						
+							<option value="18">2018</option>
+						
+							<option value="19">2019</option>
+						
+							<option value="20">2020</option>
+						
+							<option value="21">2021</option>
+						
+							<option value="22">2022</option>
+						
+							<option value="23">2023</option>
+						
+							<option value="24">2024</option>
+						
+							<option value="25">2025</option>
+						
+							<option value="26">2026</option>
+						
+							<option value="27">2027</option>
+						
+							<option value="28">2028</option>
+						
+							<option value="29">2029</option>
+						
+							<option value="30">2030</option>
+						
+			</select>
+		</div>
+	</div>
+
+
+	<script>
+		function wt(){
+			window.open('/salsa/api/shop/cvv2.jsp', "mywindow", "menubar=0,resizable=0,width=450,height=500");
+			return false;
+		}
+	</script>
+	<div class="formRow">
+		<label for="CVV2">
+			Security Code
+			<a onclick="return wt()" href="/salsa/api/shop/cvv2.jsp" target="_blank"> (What's this?)</a>
+		</label>
+
+		
+
+	    <input class="input3" maxlength="4" size="3" name="CVV2" id="CVV2" autocomplete="off" /><span class='required'>*</span>
+	</div>
+
+</fieldset><!-- credit_card_information -->
+		<div >
+
+			<button id="submitContribution" type="submit" alt="Submit Contribution" data-loading-text="Processing..." class="submit btn btn-success">Donate</button>
+
+			<script>
+				$('input:radio').change(function(){
+					var value = $("form input[name=amount]:checked").val();
+					$( "#submitContribution span" ).remove();
+					$('#submitContribution').append(" <span>$"+value+"</span>");
+				});
+
+				$('input#otheramt').focusin(function(){
+					$( '.amount-button' ).removeClass( 'active' );
+				});
+
+				$('#otheramt, #other').focusout(function(){
+					var value = $('input#otheramt').val();
+					$( '#submitContribution span' ).remove();
+					$('#submitContribution').append(" <span>$"+value+"</span>");
+				});
+
+				$('.amount-button').click(function(){
+					$("input#otheramt").val('');
+					});
+
+				//$('.amount-button').click(function(){
+					//window.location.hash = '#pane2';
+				//});
+
+			  $('#myButton').on('click', function () {
+				    var $btn = $(this).button('loading')
+				    // business logic...
+				    $btn.button('reset')
+			 	 })
+			</script>
+			<p>Your card will be charged</p>
+
+		</div>
+	        </div>
+
+			
+			
+			
+
+			
+				<input type="hidden" name="eligibility" value="1" />
+			
+
+		</div><!-- right_container -->
+
+
+
+		<input type="hidden" name="organization_KEY" value="5542" />
+
+
+		
+			
+				<input type="hidden" name="link" value="groups" />
+				<input type="hidden" name="linkKey" value="0" />
+			
+				<input type="hidden" name="link" value="groups" />
+				<input type="hidden" name="linkKey" value="" />
+			
+				<input type="hidden" name="link" value="groups" />
+				<input type="hidden" name="linkKey" value="133572" />
+			
+		
+
+
+		
+
+		<input type="hidden" name="updateRowValues" value="true" />
+
+		<div class="clear"></div>
+		
+
+	    
+
+		
+	</section>	
+	</form>
+</div>
+ 
+ <script type='text/javascript'><!-- //
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    var target = this.href.split('#');
+    $('.nav a').filter('[href="#'+target[1]+'"]').tab('show');
+})
+
+$(".outside-link").click(function() {
+    $(".nav li").removeClass("active");
+	$($(this).attr("data-toggle-tab")).parent("li").addClass("active");
+});
+
+$(".amount-button").click(function() {
+    $(".nav li").removeClass("active");
+	$(".nav li:nth-child(2)").addClass("active");
+});
+
+
+// -->
+</script>
+
+<div id="getOneIdDiv"></div>
+
+
+<script src='javascripts/bootstrap.min.js' type='text/javascript'><script>
+
+
+<script type="text/javascript">
+OneIdExtern.registerApiReadyFunction( function() {
+	OneId.isUserEnabled(function(enabled){
+		if (enabled){
+			document.getElementById('oneIdDiv').innerHTML='<img alt="Load OneID Profile" name="Load OneId Profile" type="button" src="https://my.oneid.com/api/images/1id_AccuFill-100.png" onClick="OneIdForm.fill(postData)"/>';
+        } 
+	});
+});
+
+</script>
+
+		<!-- footer -->
+	
+	
+</div><!-- salsa --><!-- TemplateEndEditable -->
+</body>
+</html>

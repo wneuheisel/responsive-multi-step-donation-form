@@ -1,0 +1,99 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+//@import "compass/reset";
+@import "_bootstrap";
+@import "slabtext.css";
+
+html {
+	font-family:'Open Sans Condensed', 'opensanscondensed' sans-serif;
+	font-size: 18px;
+	background-image: url('../images/full.jpg');
+	background-color: none;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+body {
+	background-color: transparent;
+}
+
+#salsa {
+	max-width: 430px;
+	//min-width: 320px;
+	box-sizing: border-box;
+}
+
+#main-col {
+	//border: 1px solid red;
+}
+
+#hero-col {
+	color: white;
+	text-transform: uppercase;
+	padding-top: 5%;
+	border: 1px solid red;
+}
+
+#hero-col h1 {
+	//font-size: 8vw;
+	//padding-right: 5%;
+	border: 1px solid red;
+	max-width: 100%;
+}
+
+#hero-col p {
+	max-width: 475px;
+	line-height: 1.8em;
+}
+
+.tab-pane {
+	border:1px solid $gray-lighter;
+	border-top: none;
+	padding: 20px;
+	background-color: white;
+}
+
+.amount-select .btn {
+	float: left;
+	margin: .5em;
+	width: 4.2em;
+}
+
+.amount-select .other {
+	margin-top: 1em;
+}
+
+.amount-select label, .btn {
+	font-family: $headings-font-family;
+	font-weight: 700;
+	font-size: 1.4em;
+}
+
+.outside-link {
+	width: auto;
+	margin: 1em auto;
+	display: block;
+}
+
+.amount-button.active {
+	background-color: $btn-success-bg;
+	border-color: $btn-success-border;
+}
+
+.nav li a {
+	background-color: $gray-light;
+	color: $btn-info-color;
+	font-size: .75em;
+}
+
+.nav li.active a {
+	background-color: $btn-default-bg;
+	color: $btn-default-color;
+}
+
+#main-container {
+	width: 100%;
+}
