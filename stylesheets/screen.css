@@ -8593,27 +8593,28 @@ body {
 #salsa {
   max-width: 430px;
   box-sizing: border-box;
+  margin-bottom: 2em;
 }
 
-/* line 33, ../sass/screen.scss */
+/* line 34, ../sass/screen.scss */
 #hero-col {
   color: white;
   text-transform: uppercase;
   padding-top: 5%;
 }
 
-/* line 40, ../sass/screen.scss */
+/* line 41, ../sass/screen.scss */
 #hero-col h1 {
   max-width: 100%;
 }
 
-/* line 47, ../sass/screen.scss */
+/* line 48, ../sass/screen.scss */
 #hero-col p {
   max-width: 475px;
   line-height: 1.8em;
 }
 
-/* line 52, ../sass/screen.scss */
+/* line 53, ../sass/screen.scss */
 .tab-pane {
   border: 1px solid #eeeeee;
   border-top: none;
@@ -8621,52 +8622,52 @@ body {
   background-color: white;
 }
 
-/* line 59, ../sass/screen.scss */
+/* line 60, ../sass/screen.scss */
 .amount-select .btn {
   float: left;
   margin: .5em;
   width: 4.2em;
 }
 
-/* line 65, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 .amount-select .other {
   margin-top: 1em;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 .amount-select label, .btn {
   font-family: "Open Sans Condensed", "opensanscondensed", sans-serif;
   font-weight: 700;
   font-size: 1.4em;
 }
 
-/* line 75, ../sass/screen.scss */
+/* line 76, ../sass/screen.scss */
 .outside-link {
   width: auto;
   margin: 1em auto;
   display: block;
 }
 
-/* line 81, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 .amount-button.active {
   background-color: #5cb85c;
   border-color: #4cae4c;
 }
 
-/* line 86, ../sass/screen.scss */
+/* line 87, ../sass/screen.scss */
 .nav li a {
   background-color: #777777;
   color: #fff;
   font-size: .75em;
 }
 
-/* line 92, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 .nav li.active a {
   background-color: #fff;
   color: #333;
 }
 
-/* line 97, ../sass/screen.scss */
+/* line 98, ../sass/screen.scss */
 #main-container {
   width: 100%;
 }
