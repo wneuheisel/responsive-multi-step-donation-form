@@ -8600,12 +8600,10 @@ body {
   color: white;
   text-transform: uppercase;
   padding-top: 5%;
-  border: 1px solid red;
 }
 
 /* line 40, ../sass/screen.scss */
 #hero-col h1 {
-  border: 1px solid red;
   max-width: 100%;
 }
 
